@@ -69,6 +69,20 @@
             tapping-term-ms = <135>;
             quick-tap-ms = <0>;
         };
+
+        tiesc: tilde_escape_shift {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp ESC>, <&kp TILDE>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        grtiesc: grave_tilde_escape {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&tiesc>, <&kp GRAVE>;
+            mods = <(MOD_LGUI|MOD_RGUI)>;
+        };
     };
 
     keymap {
